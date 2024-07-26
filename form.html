@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ReadyMadeSpeech.com - AI Wedding Speech Generator</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="logo.svg" alt="Logo" class="logo-svg" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Best Man Speech</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Maid of Honor's Speech</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Wedding Speeches
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Father of the Bride Speech</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Mother of the Bride Speech</a
+                  >
+                </li>
+                <li><a class="dropdown-item" href="#">Groom's Speech</a></li>
+                <li><a class="dropdown-item" href="#">Bride's Speech</a></li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Parents of the Groom Speech</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Officiant's Speech</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Toast from a Close Friend or Relative</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Joint Speech by the Newlyweds</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Rehearsal Dinner Speeches</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Wedding Vows</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <section class="hero py-5">
+        <div class="container">
+          <div class="row mb-5 justify-content-center text-center">
+            <div class="col-md-8">
+              <h1>Create an Unforgettable Best Man Speech</h1>
+              <h2 class="h4">
+                AI-Powered Speech Generator for the Perfect Toast
+              </h2>
+            </div>
+            <div class="col-md-4 d-none d-md-block">
+              <img
+                src="best-man.svg"
+                alt="Best Man Speech Illustration"
+                class="img-fluid mx-auto d-block"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="speech-form py-5 bg-light">
+        <div class="container">
+          <h2 class="text-center mb-4">Generate Your Best Man Speech</h2>
+          <div class="row justify-content-center">
+            <div class="col-md-8">
+              <form
+                action="/preview"
+                method="POST"
+                class="needs-validation"
+                novalidate
+              >
+                <input type="hidden" name="type" value="{{ $type }}" />
+                @csrf
+
+                <div class="mb-3">
+                  <label for="groom" class="form-label">Groom's name</label>
+                  <input
+                    type="text"
+                    class="form-control is-invalid"
+                    name="groom"
+                    id="groom"
+                    placeholder="First name"
+                    required
+                  />
+                  <div class="invalid-feedback">
+                    Please provide the groom's name.
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="bride" class="form-label">Bride's name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="bride"
+                    id="bride"
+                    placeholder="First name"
+                    required
+                  />
+                </div>
+
+                <div class="mb-3">
+                  <label for="best_man" class="form-label"
+                    >Best man's name</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="best_man"
+                    id="best_man"
+                    placeholder="First name"
+                    required
+                  />
+                </div>
+
+                <div class="mb-3">
+                  <label for="relationship_to_groom" class="form-label"
+                    >Relationship to groom</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="relationship_to_groom"
+                    id="relationship_to_groom"
+                    placeholder="Relationship"
+                    required
+                  />
+                </div>
+
+                <div class="mb-3">
+                  <label for="years_known_groom" class="form-label"
+                    >Years known the groom</label
+                  >
+                  <input
+                    type="number"
+                    class="form-control"
+                    name="years_known_groom"
+                    id="years_known_groom"
+                    placeholder="Years"
+                    required
+                  />
+                </div>
+
+                <div class="mb-3">
+                  <label for="anecdote_1" class="form-label">Anecdote 1</label>
+                  <textarea
+                    class="form-control"
+                    name="anecdote_1"
+                    id="anecdote_1"
+                    placeholder="Share a memorable story"
+                    rows="3"
+                    required
+                  ></textarea>
+                </div>
+
+                <div class="mb-3">
+                  <label for="anecdote_2" class="form-label">Anecdote 2</label>
+                  <textarea
+                    class="form-control"
+                    name="anecdote_2"
+                    id="anecdote_2"
+                    placeholder="Share another story"
+                    rows="3"
+                    required
+                  ></textarea>
+                </div>
+
+                <div class="mb-3">
+                  <label for="how_couple_met" class="form-label"
+                    >How the couple met</label
+                  >
+                  <textarea
+                    class="form-control"
+                    name="how_couple_met"
+                    id="how_couple_met"
+                    placeholder="Describe how they met"
+                    rows="3"
+                    required
+                  ></textarea>
+                </div>
+
+                <div class="mb-3">
+                  <label for="length_of_relationship" class="form-label"
+                    >Length of relationship</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="length_of_relationship"
+                    id="length_of_relationship"
+                    placeholder="e.g., 5 years"
+                    required
+                  />
+                </div>
+
+                <div class="mb-3">
+                  <label for="shared_interests" class="form-label"
+                    >Shared interests of the couple</label
+                  >
+                  <textarea
+                    class="form-control"
+                    name="shared_interests"
+                    id="shared_interests"
+                    placeholder="List shared interests"
+                    rows="3"
+                    required
+                  ></textarea>
+                </div>
+
+                <div class="mb-3">
+                  <label for="groom_positive_qualities" class="form-label"
+                    >Groom's positive qualities</label
+                  >
+                  <textarea
+                    class="form-control"
+                    name="groom_positive_qualities"
+                    id="groom_positive_qualities"
+                    placeholder="List positive qualities"
+                    rows="3"
+                    required
+                  ></textarea>
+                </div>
+
+                <div class="mb-3">
+                  <label for="bride_positive_qualities" class="form-label"
+                    >Bride's positive qualities</label
+                  >
+                  <textarea
+                    class="form-control"
+                    name="bride_positive_qualities"
+                    id="bride_positive_qualities"
+                    placeholder="List positive qualities"
+                    rows="3"
+                    required
+                  ></textarea>
+                </div>
+
+                <div class="mb-3">
+                  <label for="inside_joke" class="form-label"
+                    >Inside joke or humorous story</label
+                  >
+                  <textarea
+                    class="form-control"
+                    name="inside_joke"
+                    id="inside_joke"
+                    placeholder="Share a funny moment"
+                    rows="3"
+                    required
+                  ></textarea>
+                </div>
+
+                <div class="mb-3">
+                  <label for="wedding_venue" class="form-label"
+                    >Wedding venue/location</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="wedding_venue"
+                    id="wedding_venue"
+                    placeholder="e.g., Beachside Resort"
+                    required
+                  />
+                </div>
+
+                <div class="mb-3">
+                  <label for="wedding_theme" class="form-label"
+                    >Wedding theme (if any)</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="wedding_theme"
+                    id="wedding_theme"
+                    placeholder="e.g., Rustic Chic"
+                  />
+                </div>
+
+                <div class="text-center mt-4">
+                  <button
+                    type="submit"
+                    class="btn btn-primary btn-lg btn-cta px-5 py-3"
+                  >
+                    <span class="fs-4">Create My Speech Now</span>
+                    <br />
+                    <small class="text-light"
+                      >100% Satisfaction Guaranteed</small
+                    >
+                  </button>
+                </div>
+              </form>
+              <div class="text-center mt-3">
+                <p class="text-muted">
+                  <small
+                    >No credit card required | Free preview available</small
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mb-3">
+            <a href="#">
+              <img src="logo.svg" alt="Logo" class="logo-svg" />
+            </a>
+            <p>About Us</p>
+          </div>
+          <div class="col-md-4 mb-3">
+            <h5>Quick Links</h5>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-dark">Best Man Speech</a></li>
+              <li><a href="#" class="text-dark">Maid of Honor Speech</a></li>
+              <li><a href="#" class="text-dark">Wedding Vows</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4 mb-3">
+            <h5>Resources</h5>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-dark">FAQ</a></li>
+              <li><a href="#" class="text-dark">Terms of Service</a></li>
+              <li><a href="#" class="text-dark">Privacy Policy</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (function () {
+        "use strict";
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.querySelectorAll(".needs-validation");
+
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms).forEach(function (form) {
+          form.addEventListener(
+            "submit",
+            function (event) {
+              if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+
+              form.classList.add("was-validated");
+            },
+            false
+          );
+        });
+      })();
+    </script>
+  </body>
+</html>

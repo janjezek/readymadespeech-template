@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ReadyMadeSpeech.com - AI Wedding Speech Generator</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="logo.svg" alt="Logo" class="logo-svg" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Best Man Speech</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Maid of Honor's Speech</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Wedding Speeches
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Father of the Bride Speech</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Mother of the Bride Speech</a
+                  >
+                </li>
+                <li><a class="dropdown-item" href="#">Groom's Speech</a></li>
+                <li><a class="dropdown-item" href="#">Bride's Speech</a></li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Parents of the Groom Speech</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Officiant's Speech</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Toast from a Close Friend or Relative</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Joint Speech by the Newlyweds</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Rehearsal Dinner Speeches</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Wedding Vows</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main role="main">
+      <section class="py-5">
+        <div class="container">
+          <h1 class="text-center mb-4">Preview Your Best Man Speech</h1>
+          <div class="row justify-content-center">
+            <div class="col-md-8">
+              <div class="card mb-4">
+                <div class="card-body">
+                  <h2 class="card-title">Your Customized Speech</h2>
+                  <p class="card-text">
+                    [Preview of the generated speech will go here. This is a
+                    placeholder text.] Ladies and gentlemen, friends and family,
+                    we're gathered here today to celebrate the union of [Groom's
+                    Name] and [Bride's Name]. As [Groom's Name]'s best man and
+                    friend of [Years Known] years, it's my honor to share some
+                    words about this wonderful couple...
+                  </p>
+                  <p class="card-text"><em>The full speech continues...</em></p>
+                </div>
+              </div>
+              <!-- Payment Warning Alert -->
+              <div
+                class="alert alert-warning alert-dismissible fade show mb-4"
+                role="alert"
+              >
+                <strong>Payment Unsuccessful!</strong> We couldn't process your
+                payment. Please check your payment details and try again.
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="alert"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="text-center">
+                <form action="{{ route('checkout') }}" method="POST">
+                  @csrf
+                  <button type="submit" class="btn btn-primary btn-lg mb-3">
+                    Purchase Full Speech Now
+                  </button>
+                </form>
+                <p class="text-muted">
+                  <small
+                    >100% Satisfaction Guaranteed | Instant Download after
+                    Purchase</small
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mb-3">
+            <a href="#">
+              <img src="logo.svg" alt="Logo" class="logo-svg" />
+            </a>
+            <p>About Us</p>
+          </div>
+          <div class="col-md-4 mb-3">
+            <h5>Quick Links</h5>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-dark">Best Man Speech</a></li>
+              <li><a href="#" class="text-dark">Maid of Honor Speech</a></li>
+              <li><a href="#" class="text-dark">Wedding Vows</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4 mb-3">
+            <h5>Resources</h5>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-dark">FAQ</a></li>
+              <li><a href="#" class="text-dark">Terms of Service</a></li>
+              <li><a href="#" class="text-dark">Privacy Policy</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (function () {
+        "use strict";
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.querySelectorAll(".needs-validation");
+
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms).forEach(function (form) {
+          form.addEventListener(
+            "submit",
+            function (event) {
+              if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+
+              form.classList.add("was-validated");
+            },
+            false
+          );
+        });
+      })();
+    </script>
+  </body>
+</html>

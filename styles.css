@@ -1,0 +1,128 @@
+body {
+  font-family: Georgia, serif;
+  color: #15304a; /* Darker Navy Blue for primary text */
+  background-color: #fafafa; /* Pure White for primary background */
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Playfair Display", serif;
+  color: #15304a; /* Darker Navy Blue for headings */
+}
+.navbar {
+  background-color: #d1e8ff; /* Slightly darker Pale Blue for navbar */
+}
+.btn-primary {
+  background-color: #518151; /* Darker Sage Green for primary buttons */
+  border-color: #518151;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  background-color: #3e613e !important; /* Even darker Sage Green for hover state */
+  border-color: #3e613e !important;
+  box-shadow: none !important;
+}
+.btn-outline-primary {
+  color: #518151; /* Darker Sage Green for outline buttons */
+  border-color: #518151;
+}
+.btn-outline-primary:hover,
+.btn-outline-primary:focus,
+.btn-outline-primary:active {
+  background-color: #518151 !important;
+  border-color: #518151 !important;
+  color: #fafafa !important; /* Pure White for text on hover */
+  box-shadow: none !important;
+}
+.hero {
+  background-color: #d1e8ff; /* Slightly darker Pale Blue for hero section */
+  padding: 4rem 0;
+}
+.featured {
+  background-color: #fafafa; /* Pure White for featured section */
+  padding: 2rem 0;
+}
+.testimonials {
+  background-color: #e6f3ff; /* Original Pale Blue for testimonials */
+  padding: 4rem 0;
+}
+.how-it-works {
+  background-color: #fafafa; /* Pure White for how-it-works section */
+  padding: 4rem 0;
+}
+.faqs {
+  background-color: #d1e8ff; /* Slightly darker Pale Blue for FAQs section */
+  padding: 4rem 0;
+}
+footer {
+  background-color: #fafafa; /* Darker Slate Gray for footer */
+  padding: 2rem 0;
+}
+.logo-svg {
+  width: 280px;
+  height: 70px;
+}
+/* Add this new style for better contrast in cards */
+.card {
+  background-color: #fafafa;
+  border: 1px solid #d1e8ff;
+}
+/* Add this new style for navbar links */
+.navbar-light .navbar-nav .nav-link {
+  color: #15304a;
+}
+/* Add this new style for dropdown menu */
+.dropdown-menu {
+  background-color: #fafafa;
+}
+.dropdown-item {
+  color: #15304a;
+}
+.dropdown-item:hover,
+.dropdown-item:focus {
+  background-color: #d1e8ff;
+}
+.navbar-nav .nav-link {
+  transition: color 0.3s ease;
+}
+.navbar-nav .nav-link:hover {
+  color: #0e2235; /* Complementary color */
+}
+.navbar-nav .nav-item.active .nav-link {
+  color: #0e2235; /* Complementary color */
+  font-weight: bold;
+}
+.navbar-nav .dropdown:hover .dropdown-menu {
+  display: block;
+}
+.hero .card {
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.hero .card:hover {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 767px) {
+  .hero .col-md-6 {
+    margin-bottom: 2rem;
+  }
+}
+.btn-cta {
+  transition: all 0.3s ease;
+  transform: translateY(0);
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+.btn-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+}
+.btn-cta:active {
+  transform: translateY(1px);
+}
